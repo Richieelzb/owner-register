@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearby Places Search</title>
+</head>
+<body>
+    <h2>Find Nearby Places</h2>
+
+    <input type="text" id="keyword" placeholder="e.g. restaurant">
+    <button onclick="searchNearby()">Search</button>
+
+    <div id="results"></div>
+
+    <script>
+        function searchNearby() {
+            const keyword = document.getElementById("keyword").value;
+
+            if (!navigator.geolocation) {
+                alert("Geolocation is not supported.");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    fetch("http://localhost:5000/search", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude,
+                            keyword: keyword
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        let html = "<h3>Results</h3>";
+
+                        data.results.forEach(place => {
+                            html += `
+                                <p>
+                                    <b>${place.name}</b><br>
+                                    ${place.address}<br>
+                                    Rating: ${place.rating || "N/A"}
+                                </p>
+                            `;
+                        });
+
+                        document.getElementById("results").innerHTML = html;
+                    });
+                },
+                function(error) {
+                    alert("Unable to get location.");
+                }
+            );
+        }
+    </script>
+</body>
+</html>
