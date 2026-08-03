@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN python src/index.py
+RUN python src/app.py
 
 
 # Stage 2 - Serve HTML
