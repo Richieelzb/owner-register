@@ -6,17 +6,34 @@
 
 <title>Add Your Business</title>
 
-{{ url_for('static', filename='css/style.css') }}
-https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+<link 
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
+    <nav class="navbar">
+    <a href="https://wallawalla.co.za" style="text-decoration:none; color:inherit;">
     <div class="logo">
-         filename='images/logo.png') }}">
+        <img src="{{ url_for('static', filename='images/walla_transparent_clean.png') }}" alt="WallaWalla Logo">
+        <span class="logo-text">
+            <span class="green">WALLA</span>WALLA
+        </span>
     </div>
+    </a>
+
+    <button class="location-btn" onclick="getLocation()">
+        <i class="fa-solid fa-location-dot"></i>
+        Use My Location
+    </button>
+</nav>
+
 
     <nav>
         #
@@ -55,8 +72,8 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
 
     </div>
 
-    <div class="hero-image">
-        <img src="{{ url_
+    <!-- <div class="hero-image">
+        <img src="{{ url_ -->
 </section>
 
 <!-- BENEFITS -->
@@ -156,7 +173,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
             <input
                 type="text"
                 name="website"
-                placeholder="https://yourwebsite.co.za"
+                placeholder="https://wallawalla.co.za"
             >
 
         </div>
@@ -224,7 +241,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
 
 </footer>
 
-/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
 </html>
