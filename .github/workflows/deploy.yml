@@ -45,5 +45,5 @@ jobs:
         run: |          
           aws ecs update-service \
                 --cluster wallawalla-cluster \
-                --service main-project-service \
+                --service owner-project-service \
                 --force-new-deployment
