@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" sizes="40x40" href="static/images/wallawalla-circular.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Results</title>
+
+    <link 
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <nav class="navbar">
+    <a href="https://wallawalla.co.za" style="text-decoration:none; color:inherit;">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/walla.png') }}" alt="WallaWalla Logo">
+        <span class="logo-text">
+            <span class="green">WALLA</span>WALLA
+        </span>
+    </div>
+    </a>
+
+    <button class="location-btn">
+        <i class="fa-solid fa-location-dot"></i>
+        Use My Location
+    </button>
+    </nav>
+
+    <div class="results-container">
+        <h1 class="results-title">Results for "{{ query }}"</h1>
+        
+        {% if results %}
+            <p class="results-subtitle">
+                <i class="fa-solid fa-location-arrow"></i>
+                Click on a business name for directions
+            </p>
+            {% for place in results %}
+                <div class="place-card" style="margin-bottom: 20px;">
+                    <h3>
+                    <a href="https://www.google.com/maps/search/?api=1&query={{ place.name }} {{ place.address }}" target="_blank">
+                        {{ place.name }}
+                    </a>
+                    </h3>
+                    <p>{{ place.address or 'Address unavailable' }}</p>
+                    <p>⭐ {{ place.rating }}</p>
+                    <p><i class="fa-solid fa-location-dot"></i> {{ place.distance }} km away</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align:center;color:red;">No results found...check if you have enabled location services</p>
+        {% endif %}
+</div>
+</body>
+</html>
