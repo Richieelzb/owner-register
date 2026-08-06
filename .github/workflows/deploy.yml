@@ -10,7 +10,6 @@ env:
   ECR_REPOSITORY: owner-repo
 
 jobs:
-
   deploy:
 
     runs-on: ubuntu-latest
