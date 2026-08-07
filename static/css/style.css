@@ -269,6 +269,13 @@ footer ul{
 footer li{
     margin:8px 0;
 }
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
 
 @media(max-width:992px){
 
