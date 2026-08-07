@@ -64,19 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
         indicator2.classList.remove("active");
         indicator3.classList.add("active");
 
-    });
-
-    // STEP 3 -> STEP 2
-    document.getElementById("prevBtn2").addEventListener("click", () => {
-
-        step3.classList.remove("active");
-        step2.classList.add("active");
-
-        indicator3.classList.remove("active");
-        indicator2.classList.add("active");
-
-    // Populate review section
-    document.getElementById("reviewData").innerHTML = `
+          // Populate review section
+        document.getElementById("reviewData").innerHTML = `
         <p><strong>Business:</strong>
             ${document.querySelector('[name="business_name"]').value}
         </p>
@@ -96,26 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Step 3 -> Step 2
-   document.getElementById("prevBtn2").addEventListener("click", () => {
+    });
+
+    // STEP 3 -> STEP 2
+    document.getElementById("prevBtn2").addEventListener("click", () => {
 
         step3.classList.remove("active");
         step2.classList.add("active");
 
         indicator3.classList.remove("active");
         indicator2.classList.add("active");
-
-    });
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
-
-        document.getElementById("step1").classList.remove("active");
-        document.getElementById("step2").classList.add("active");
-
-    });
 
 });
