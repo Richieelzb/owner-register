@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}
         </p>  
         
-        <p><strong>Category:</strong> ${document.querySelector('[name="description"]').value}
+        <p><strong>Description:</strong> ${document.querySelector('[name="description"]').value}
         </p> 
 
         <p><strong>Phone:</strong>
