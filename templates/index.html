@@ -15,7 +15,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
@@ -54,11 +55,20 @@
             thousands of local customers.
         </p>
 
-        <ul>
-            <li>100% Free to list your business</li>
-            <li>Reach more local customers</li>
-            <li>Help your community find you</li>
-        </ul>
+        <ul class="feature-list">
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                100% Free to list your business
+            </li>
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Reach more local customers
+            </li>
+            <li>
+                <i class="fa-solid fa-circle-check"></i>
+                Help your community find you
+    </li>
+</ul>
 
     </div>
 
@@ -69,23 +79,43 @@
 <section class="benefit-grid">
 
     <div class="benefit">
-        <h4>Be Discovered</h4>
-        <p>Your business appears in search results.</p>
+       <div class="benefit-icon">
+           <i class="fa-solid fa-store"></i>
+       </div>
+       <div>
+          <h4>Be Discovered</h4>
+          <p>Your business appears in search results.</p>
+       </div>
     </div>
 
     <div class="benefit">
-        <h4>More Customers</h4>
-        <p>Customers find your business quickly.</p>
+        <div class="benefit-icon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+        <div>
+            <h4>More Customers</h4>
+            <p>Customers find your business quickly.</p>
+        </div>
     </div>
 
     <div class="benefit">
-        <h4>Build Trust</h4>
-        <p>Share accurate business information.</p>
+        <div class="benefit-icon">
+            <i class="fa-solid fa-shield-check"></i>
+        </div>
+        <div>
+            <h4>Build Trust</h4>
+            <p>Share accurate business information.</p>
+        </div>
     </div>
 
     <div class="benefit">
-        <h4>Grow Your Business</h4>
-        <p>Expand your reach and sales.</p>
+        <div class="benefit-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div>
+            <h4>Grow Your Business</h4>
+            <p>Expand your reach and sales.</p>
+        </div>
     </div>
 
 </section>
