@@ -232,16 +232,26 @@ textarea{
     border-radius:12px;
 }
 
-.next-btn{
-    display:block;
-    float:none;
-    background:#169340;
-    color:#fff;
-    border:none;
-    padding:15px 40px;
-    margin-left:auto;
-    margin-top:20px;
-    border-radius:10px;
+.next-btn {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.next-btn:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+.next-btn:active {
+    transform: translateY(0);
 }
 
 .privacy-box{
