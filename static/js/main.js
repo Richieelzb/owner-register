@@ -54,24 +54,24 @@ document.addEventListener("DOMContentLoaded", function () {
         step2.classList.remove("active");
         step3.classList.add("active");
 
-        // Populate review section
-        document.getElementById("reviewData").innerHTML = `
-            <p><strong>Business:</strong>
-                ${document.querySelector('[name="business_name"]').value}
-            </p>
+    // Populate review section
+    document.getElementById("reviewData").innerHTML = `
+        <p><strong>Business:</strong>
+            ${document.querySelector('[name="business_name"]').value}
+        </p>
 
-            <p><strong>Phone:</strong>
-                ${document.querySelector('[name="phone"]').value}
-            </p>
+        <p><strong>Phone:</strong>
+            ${document.querySelector('[name="phone"]').value}
+        </p>
 
-            <p><strong>Email:</strong>
-                ${document.querySelector('[name="email"]').value}
-            </p>
+        <p><strong>Email:</strong>
+            ${document.querySelector('[name="email"]').value}
+        </p>
 
-            <p><strong>Address:</strong>
-                ${document.querySelector('[name="address"]').value}
-            </p>
-        `;
+        <p><strong>Address:</strong>
+            ${document.querySelector('[name="address"]').value}
+        </p>
+    `;
 
     });
 
