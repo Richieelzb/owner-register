@@ -319,10 +319,16 @@ footer li{
     }
 
     .hero p{
-        font-size:0.9rem;
+        font-size:20px;
         line-height:1.5;
         padding:0 10px;
     }
+
+    .feature-list i {
+        color: #28a745;
+        font-size:0.9rem;
+    }
+    
 
     .hero-content{
         width: 100%;
