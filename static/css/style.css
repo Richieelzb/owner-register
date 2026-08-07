@@ -233,44 +233,28 @@ footer li{
 
 @media(max-width:992px){
 
-    .navbar{
+     .navbar{
         padding:15px 20px;
         flex-direction: column;
         gap: 15px;
-    }
-
-    .hero{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:140px 20px 30px;
-    }
-
-    .hero-content{
-        width:50%;
-    }
-
-    .hero h1{
-        font-size:30px;
-        line-height:1.1;
     }
 
     .hero h1 span{
         color:#59c95c;
     }
 
-    .hero p{
-        margin:20px 0;
-        font-size:15px;
-    }
-
     .hero ul{
         list-style:none;
     }
 
+    .logo{
+        font-size:24px;
+    }
+
+
     .form-section,
     .privacy-box,
-    footer{
+    .footer{
         margin:20px;
     }
 
@@ -279,8 +263,23 @@ footer li{
         gap:20px;
     }
 
+    .hero{
+        margin-top:-20px;
+        padding:120px 15px 50px;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .hero p{
+        font-size:0.95rem;
+        padding:0 10px;
+    }
+
     .hero-content{
-        width:100%;
+        width: 100%;
+        padding: 0 5px;
     }
 
     .benefit-grid{
