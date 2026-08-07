@@ -110,6 +110,23 @@ body{
     color:#09341e;
     margin-bottom:25px;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:auto;
+    height:100px;
+}
+
+.logo-text{
+    font-size:40px;
+    font-weight:600;
+    letter-spacing:3px;
+    color:white;
+}
 
 .steps{
     display:flex;
