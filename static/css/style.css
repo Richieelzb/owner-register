@@ -233,15 +233,19 @@ footer li{
 
 @media(max-width:992px){
 
-     navbar{
+    .navbar{
         padding:15px 20px;
         flex-direction: column;
         gap: 15px;
     }
 
     .hero{
-        padding:40px 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:140px 20px 40px;
     }
+
     .hero-content{
         width:50%;
     }
