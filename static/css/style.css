@@ -29,9 +29,14 @@ body{
     color:#333;
 }
 
-.active{
+.nav-active {
     color:#1ba64a;
     font-weight:600;
+}
+
+.step.active span {
+    background:#20aa4a;
+    color:#fff;
 }
 
 .login-btn{
@@ -127,12 +132,6 @@ body{
     margin-right:10px;
 }
 
-.active span{
-    background:#20aa4a;
-    color:#fff;
-    border:none;
-}
-
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -159,11 +158,13 @@ textarea{
 }
 
 .next-btn{
-    float:right;
+    display:block;
+    float:none;
     background:#169340;
     color:#fff;
     border:none;
     padding:15px 40px;
+    margin-left:auto;
     margin-top:20px;
     border-radius:10px;
 }
@@ -201,7 +202,19 @@ footer li{
 @media(max-width:992px){
 
 .hero{
+    padding:40px 20px;
+}
+
+.benefit-grid,
+.form-section,
+.privacy-box,
+footer{
+    margin:20px;
+}
+
+.navbar{
     flex-direction:column;
+    gap:20px;
 }
 
 .hero-content{
