@@ -202,6 +202,30 @@ body{
     border:2px solid #ccc;
     margin-right:10px;
 }
+.step {
+    color: #666;
+}
+
+.step span {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step.active span {
+    background: #1fb14e;
+    color: white;
+    border-color: #1fb14e;
+}
+
+.step.active {
+    color: #1fb14e;
+    font-weight: 600;
+}
 
 .green{
     color:#99d420;
