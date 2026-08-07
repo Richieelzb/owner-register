@@ -203,6 +203,10 @@ body{
     margin-right:10px;
 }
 
+.green{
+    color:#99d420;
+}
+
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
