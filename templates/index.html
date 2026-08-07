@@ -128,31 +128,28 @@
 
     <div class="steps">
 
-        <div class="step active">
-            <span>1</span>
-            Business Details
+        <div class="step active" id="indicator1">
+            <span>1</span> Business Details
         </div>
 
-        <div class="step">
-            <span>2</span>
-            Contact & Location
+        <div class="step" id="indicator2">
+            <span>2</span> Contact & Location
         </div>
 
-        <div class="step">
-            <span>3</span>
-            Review & Submit
+        <div class="step" id="indicator3">
+            <span>3</span> Review & Submit
         </div>
 
     </div>
 
     <form id="businessForm" enctype="multipart/form-data">
+          <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
 
         <div class="grid">
 
             <input
-                type="text"
-                name="business_name"
-                placeholder="Business Name"
+                type="text" name="business_name" placeholder="Business Name"
                 required
             >
 
@@ -220,39 +217,22 @@
        <button type="button" class="next-btn">
             Next Step
        </button>
-
-    </form>
-    <form id="businessForm">
-
-    <!-- STEP 1 -->
-    <div class="form-step active" id="step1">
-        <!-- Business details fields -->
-
-        <button type="button" id="nextBtn">
-            Next Step
-        </button>
     </div>
 
     <!-- STEP 2 -->
     <div class="form-step" id="step2">
 
-        <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-        >
+        <input type="text"
+               name="phone"
+               placeholder="Phone Number">
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-        >
+        <input type="email"
+               name="email"
+               placeholder="Email Address">
 
-        <input
-            type="text"
-            name="address"
-            placeholder="Business Address"
-        >
+        <input type="text"
+               name="address"
+               placeholder="Business Address">
 
         <button type="button" id="prevBtn">
             Previous
@@ -260,6 +240,23 @@
 
         <button type="button" id="nextBtn2">
             Next Step
+        </button>
+
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="form-step" id="step3">
+
+        <h3>Review Your Information</h3>
+
+        <div id="reviewData"></div>
+
+        <button type="button" id="prevBtn2">
+            Previous
+        </button>
+
+        <button type="submit">
+            Submit Business
         </button>
 
     </div>

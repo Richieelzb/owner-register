@@ -33,7 +33,10 @@ def submit_business():
         "description": data.get("description"),
         "years": data.get("years"),
         "employees": data.get("employees"),
-        "website": data.get("website")
+        "website": data.get("website"),
+        "phone": data.get("phone"),
+        "email": data.get("email"),
+        "address": data.get("address")
     }
 
     uploaded_files = []
