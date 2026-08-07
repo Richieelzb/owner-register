@@ -36,13 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // STEP 1 -> STEP 2
     document.getElementById("nextBtn").addEventListener("click", () => {
 
+        const businessName =
+            document.querySelector('[name="business_name"]').value;
+
+        if (!businessName.trim()) {
+            alert("Please enter Business Name");
+            return;
+        }
+
         step1.classList.remove("active");
         step2.classList.add("active");
-
-        indicator1.classList.remove("active");
-        indicator2.classList.add("active");
-
-    });
+   });
 
     // STEP 2 -> STEP 1
     document.getElementById("prevBtn").addEventListener("click", () => {
@@ -69,6 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Business:</strong>
             ${document.querySelector('[name="business_name"]').value}
         </p>
+        
+        <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}
+        </p>  
+        
+        <p><strong>Category:</strong> ${document.querySelector('[name="description"]').value}
+        </p> 
 
         <p><strong>Phone:</strong>
             ${document.querySelector('[name="phone"]').value}
