@@ -85,3 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+
+        document.getElementById("step1").classList.remove("active");
+        document.getElementById("step2").classList.add("active");
+
+    });
+
+});
