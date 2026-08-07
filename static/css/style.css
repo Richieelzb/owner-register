@@ -133,13 +133,13 @@ body{
 
 .logo img{
     width:auto;
-    height:100px;
+    height:45px;
 }
 
 .logo-text{
-    font-size:40px;
+    font-size:20px;
     font-weight:600;
-    letter-spacing:3px;
+    letter-spacing:1px;
     color:white;
 }
 
@@ -233,10 +233,10 @@ footer li{
 
 @media(max-width:992px){
 
-     .navbar{
-        padding:15px 20px;
-        flex-direction: column;
-        gap: 15px;
+    .navbar{
+        padding:10px 15px;
+        flex-direction:row;
+        justify-content:space-between;
     }
 
     .hero h1 span{
@@ -258,22 +258,19 @@ footer li{
         margin:20px;
     }
 
-    .navbar{
-        flex-direction:column;
-        gap:20px;
-    }
-
     .hero{
-        margin-top:-20px;
-        padding:120px 15px 50px;
+       margin-top:0;
+       padding:90px 15px 30px;
     }
 
     .hero h1{
-        font-size:2.2rem;
+        font-size:1.8rem;
+        line-height:1.2;
     }
 
     .hero p{
-        font-size:0.95rem;
+        font-size:0.9rem;
+        line-height:1.5;
         padding:0 10px;
     }
 
@@ -284,15 +281,29 @@ footer li{
 
     .benefit-grid{
         grid-template-columns:1fr;
-        margin:-30px 20px 20px;
+        margin:0 15px 20px;
     }
 
     .grid{
         grid-template-columns:1fr;
     }
+    .login-btn{
+        padding:8px 14px;
+        font-size:14px;
+    }
 
     footer{
-        flex-direction:column;
-        gap:15px;
+    padding:20px 15px;
+    gap:10px;
+    }
+
+    footer h3,
+    footer h4{
+        font-size:16px;
+    }
+
+    footer p,
+    footer li{
+        font-size:14px;
     }
 }
