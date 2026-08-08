@@ -91,8 +91,85 @@ document.addEventListener("DOMContentLoaded", () => {
             "Hair Salon",
             "Nail Salon",
             "Beauty Salon"
-        ]
+        ],
+        "Mechanical Services": [
+            "Engine Repairs",
+            "Vehicle Servicing",
+            "Brake Repairs",
+            "Clutch Repairs",
+            "Gearbox Repairs",
+            "Suspension Repairs",
+            "Auto Electrical",
+            "Battery Replacement",
+            "Diagnostics",
+            "Cooling System Repairs",
+            "Exhaust Repairs",
+            "Tyre Services",
+            "Wheel Alignment",
+            "Panel Beating",
+            "Car Air Conditioning",
+            "Roadside Assistance",
+            "Diesel Engine Repairs",
+            "Truck Repairs",
+            "Fleet Maintenance",
+            "Motorcycle Repairs"
+        ],
+        "Cleaning Services": [
+            "House Cleaning",
+            "Office Cleaning",
+            "Deep Cleaning",
+            "Carpet Cleaning",
+            "Window Cleaning",
+            "Post-Construction Cleaning",
+            "Move-In / Move-Out Cleaning",
+            "Laundry Services",
+            "Upholstery Cleaning",
+            "Garden Cleanup",
+            "Industrial Cleaning",
+            "Warehouse Cleaning",
+            "School Cleaning",
+            "Hospital Cleaning",
+            "Restaurant Cleaning",
+            "Pressure Washing",
+            "Sanitization & Disinfection",
+            "Pest Control Cleaning",
+            "Waste Removal",
+            "Domestic Cleaning"
+        ],
+        "Nannies": [
+            "Full-Time Nanny",
+            "Part-Time Nanny",
+            "Live-In Nanny",
+            "Live-Out Nanny",
+            "Babysitting",
+            "Newborn Care",
+            "Infant Care",
+            "Toddler Care",
+            "After-School Care",
+            "Special Needs Childcare",
+            "Night Nanny",
+            "Au Pair Services",
+            "Homework Assistance",
+            "School Transport",
+            "Child Minding",
+            "Housekeeping & Childcare",
+            "Elderly Companion Care",
+            "Holiday Childcare",
+            "Weekend Childcare",
+            "Emergency Childcare"
+        ],
+        "Other": ["Please Specify"]
     };
+
+    categorySelect.addEventListener("change", function () {
+    const customField = document.getElementById("customSubcategory");
+
+        if (this.value === "Other") {
+            customField.style.display = "block";
+        } else {
+            customField.style.display = "none";
+        }
+    });
 
     const categorySelect = document.getElementById("category");
     const subcategorySelect = document.getElementById("subcategory");
