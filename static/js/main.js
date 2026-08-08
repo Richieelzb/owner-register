@@ -19,6 +19,9 @@ document
         const data = await response.json();
 
         alert("Business submitted successfully!");
+        document.getElementById("businessForm").reset();
+        window.location.href = "/thank-you";
+        
         console.log(data);
 
         } 
