@@ -56,5 +56,9 @@ def submit_business():
         "files": uploaded_files
     })
 
+@app.route("/thank-you")
+def thank_you():
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
