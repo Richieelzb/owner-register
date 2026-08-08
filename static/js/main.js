@@ -6,19 +6,26 @@ document
 
     const formData = new FormData(this);
 
-    const response = await fetch(
-        "/submit-business",
-        {
-            method:"POST",
-            body:formData
+    try {
+        const response = await fetch("/submit-business", {
+            method: "POST",
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error("Submission failed");
         }
-    );
 
-    const data = await response.json();
+        const data = await response.json();
 
-    alert(
-        "Business submitted successfully!"
-    );
+        alert("Business submitted successfully!");
+        console.log(data);
+
+        } 
+    catch (error) {
+        console.error(error);
+        alert("Failed to submit business.");
+    }
 
     console.log(data);
 });
@@ -46,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         step1.classList.remove("active");
         step2.classList.add("active");
+
+        indicator1.classList.remove("active");
+        indicator2.classList.add("active");
    });
 
     // STEP 2 -> STEP 1
@@ -95,8 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    });
-
     // STEP 3 -> STEP 2
     document.getElementById("prevBtn2").addEventListener("click", () => {
 
@@ -105,5 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         indicator3.classList.remove("active");
         indicator2.classList.add("active");
+    
+    });
 
 });
