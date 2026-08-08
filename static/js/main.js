@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Nail Salon",
             "Beauty Salon"
         ],
-        "Mechanical Services": [
+        "Mechanic Services": [
             "Engine Repairs",
             "Vehicle Servicing",
             "Brake Repairs",
@@ -161,18 +161,45 @@ document.addEventListener("DOMContentLoaded", () => {
         "Other": ["Please Specify"]
     };
 
+    const categorySelect = document.getElementById("category");
+    const subcategorySelect = document.getElementById("subcategory");
+    const customField = document.getElementById("customSubcategory");
+
     categorySelect.addEventListener("change", function () {
-        const customField = document.getElementById("customSubcategory");
 
-            if (this.value === "Other") {
-                customField.style.display = "block";
-            } else {
-                customField.style.display = "none";
-            }
-        });
+        const selectedCategory = this.value;
 
-        const categorySelect = document.getElementById("category");
-        const subcategorySelect = document.getElementById("subcategory");
+        subcategorySelect.innerHTML =
+            '<option value="" selected disabled>Select Sub Category</option>';
+
+        customField.style.display = "none";
+        customField.value = "";
+
+        if (subcategories[selectedCategory]) {
+
+            subcategories[selectedCategory].forEach(subcategory => {
+
+                const option = document.createElement("option");
+                option.value = subcategory;
+                option.textContent = subcategory;
+
+                subcategorySelect.appendChild(option);
+            });
+        }
+    });
+
+    subcategorySelect.addEventListener("change", function () {
+
+        if (this.value === "Please Specify") {
+            customField.style.display = "block";
+            customField.required = true;
+        } else {
+            customField.style.display = "none";
+            customField.required = false;
+            customField.value = "";
+        }
+
+    });
 
     categorySelect.addEventListener("change", function () {
 
@@ -202,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const category = document.querySelector('[name="category"]').value;
         const subcategory = document.querySelector('[name="subcategory"]').value;
         const description = document.querySelector('[name="description"]').value;
+        const customSubcategoryInput =document.getElementById("customSubcategory");
 
         
         if (!businessName.trim()) {
@@ -214,9 +242,20 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        if (!subcategory || subcategory === "Select Sub Category") {
+        if (!subcategory) {
             alert("Please select a sub category");
             return;
+        }
+
+        if (subcategory === "Please Specify") {
+
+            const customSubcategory =
+                customSubcategoryInput.value.trim();
+
+            if (!customSubcategory) {
+                alert("Please enter a custom subcategory");
+                return;
+            }
         }
 
         if (!description.trim()) {
@@ -249,6 +288,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = document.querySelector('[name="phone"]').value.trim();
         const email = document.querySelector('[name="email"]').value.trim();
         const address = document.querySelector('[name="address"]').value.trim();
+        const subcategoryValue = 
+                   document.querySelector('[name="subcategory"]').value === "Please Specify"
+        ? document.getElementById("customSubcategory").value
+        : document.querySelector('[name="subcategory"]').value;
 
         if (!phone) {
             alert("Phone Number is required");
@@ -291,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}</p>
 
-            <p><strong>Sub Category:</strong> ${document.querySelector('[name="subcategory"]').value}</p>
+            <p><strong>Sub Category:</strong> ${subcategoryValue}</p>
 
             <p><strong>Description:</strong> ${document.querySelector('[name="description"]').value}</p>
 
@@ -300,6 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Email:</strong> ${email}</p>
 
             <p><strong>Address:</strong> ${address}</p>
+            
         `;
     });
 
