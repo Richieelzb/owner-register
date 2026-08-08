@@ -43,11 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // STEP 1 -> STEP 2
     document.getElementById("nextBtn").addEventListener("click", () => {
 
-        const businessName =
-            document.querySelector('[name="business_name"]').value;
+        const businessName = document.querySelector('[name="business_name"]').value;
+        const category = document.querySelector('[name="category"]').value;
+        const description = document.querySelector('[name="description"]').value;
 
         if (!businessName.trim()) {
-            alert("Please enter Business Name");
+            alert("Business Name is required");
+            return;
+        }
+
+        if (!category || category === "Select Category") {
+            alert("Please select a category");
+            return;
+        }
+
+        if (!description.trim()) {
+            alert("Business Description is required");
             return;
         }
 
@@ -56,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         indicator1.classList.remove("active");
         indicator2.classList.add("active");
-   });
+    });
 
     // STEP 2 -> STEP 1
     document.getElementById("prevBtn").addEventListener("click", () => {
@@ -72,37 +83,59 @@ document.addEventListener("DOMContentLoaded", () => {
     // STEP 2 -> STEP 3
     document.getElementById("nextBtn2").addEventListener("click", () => {
 
+        const phone = document.querySelector('[name="phone"]').value.trim();
+        const email = document.querySelector('[name="email"]').value.trim();
+        const address = document.querySelector('[name="address"]').value.trim();
+
+        if (!phone) {
+            alert("Phone Number is required");
+            return;
+        }
+
+        const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
+
+        if (!phonePattern.test(phone)) {
+            alert("Enter a valid South African phone number");
+            return;
+        }
+
+        if (!email) {
+            alert("Email Address is required");
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid Email Address");
+            return;
+        }
+
+        if (!address) {
+            alert("Business Address is required");
+            return;
+        }
+
         step2.classList.remove("active");
         step3.classList.add("active");
 
         indicator2.classList.remove("active");
         indicator3.classList.add("active");
 
-          // Populate review section
+        // Populate review section
         document.getElementById("reviewData").innerHTML = `
-        <p><strong>Business:</strong>
-            ${document.querySelector('[name="business_name"]').value}
-        </p>
-        
-        <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}
-        </p>  
-        
-        <p><strong>Description:</strong> ${document.querySelector('[name="description"]').value}
-        </p> 
+            <p><strong>Business:</strong> ${document.querySelector('[name="business_name"]').value}</p>
 
-        <p><strong>Phone:</strong>
-            ${document.querySelector('[name="phone"]').value}
-        </p>
+            <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}</p>
 
-        <p><strong>Email:</strong>
-            ${document.querySelector('[name="email"]').value}
-        </p>
+            <p><strong>Description:</strong> ${document.querySelector('[name="description"]').value}</p>
 
-        <p><strong>Address:</strong>
-            ${document.querySelector('[name="address"]').value}
-        </p>
-    `;
+            <p><strong>Phone:</strong> ${phone}</p>
 
+            <p><strong>Email:</strong> ${email}</p>
+
+            <p><strong>Address:</strong> ${address}</p>
+        `;
     });
 
     // STEP 3 -> STEP 2

@@ -9,6 +9,16 @@ body{
     background:#f8faf8;
     color:#1c1c1c;
 }
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
 
 .navbar{
     border-bottom:1px solid rgba(153,212,32,.4);

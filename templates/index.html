@@ -148,35 +148,51 @@
 
         <div class="grid">
 
-            <input
-                type="text" name="business_name" placeholder="Business Name"
-                required
-            >
+            <div class="form-group">
+                <label>
+                    Business Name <span class="required">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="business_name"
+                    placeholder="Enter Business Name"
+                    required
+                >
+            </div>
 
-            <select name="category">
-                <option>Select Category</option>
-                <option>Plumbing Services</option>
-                <option>IT Services</option>
-                <option>Retail</option>
-                <option>Food</option>
-                <option>Salon</option>
-                <option>Electrical</option>
-                <option>Mechanic Services</option>
-                <option>Cleaning Services</option>
-                <option>Nannies</option>
-                <option>Other</option>
+            <div class="form-group">
+            <label>
+                Category <span class="required">*</span>
+            </label>
+            <select name="category" required>
+                <option value="" selected disabled>Select Category</option>
+                <option value="Plumbing Services">Plumbing Services</option>
+                <option value="IT Services">IT Services</option>
+                <option value="Retail">Retail</option>
+                <option value="Food">Food</option>
+                <option value="Salon">Salon</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanic Services">Mechanic Services</option>
+                <option value="Cleaning Services">Cleaning Services</option>
+                <option value="Nannies">Nannies</option>
+                <option value="Other">Other</option>
             </select>
-
-            <select name="subcategory">
-                <option>Select Sub Category</option>
-            </select>
-
         </div>
 
-        <textarea
-            name="description"
-            placeholder="What do you offer and prices..."
-        ></textarea>
+       <select name="subcategory">
+            <option>Select Sub Category</option>
+       </select>
+
+        <div class="form-group">
+            <label>
+                Business Description <span class="required">*</span>
+            </label>
+            <textarea
+                name="description"
+                placeholder="What do you offer and prices..."
+                required
+            ></textarea>
+        </div>
 
         <div class="grid">
 
@@ -223,17 +239,41 @@
     <!-- STEP 2 -->
     <div class="form-step" id="step2">
 
-        <input type="text"
-               name="phone"
-               placeholder="Phone Number">
+        <div class="form-group">
+            <label>
+                Phone Number <span class="required">*</span>
+            </label>
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+            >
+        </div>
 
-        <input type="email"
-               name="email"
-               placeholder="Email Address">
+        <div class="form-group">
+            <label>
+                Email Address <span class="required">*</span>
+            </label>
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
+        </div>
 
-        <input type="text"
-               name="address"
-               placeholder="Business Address">
+        <div class="form-group">
+            <label>
+                Business Address <span class="required">*</span>
+            </label>
+            <input
+                type="text"
+                name="address"
+                placeholder="Business Address"
+                required
+            >
+        </div>
 
         <div class="button-group">
             <button type="button" id="prevBtn" class="next-btn">
