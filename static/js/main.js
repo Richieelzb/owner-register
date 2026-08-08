@@ -42,72 +42,91 @@ document.addEventListener("DOMContentLoaded", () => {
     const indicator2 = document.getElementById("indicator2");
     const indicator3 = document.getElementById("indicator3");
 
+    const subcategories = {
+        "Plumbing Services": [
+            "Emergency Plumbing",
+            "Residential Plumbing",
+            "Commercial Plumbing",
+            "Leak Detection & Repair",
+            "Blocked Drains",
+            "Drain Cleaning",
+            "Burst Pipe Repairs",
+            "Geyser Installation",
+            "Geyser Repairs",
+            "Toilet Repairs",
+            "Bathroom Renovations",
+            "Kitchen Plumbing"
+        ],
+
+        "Electrical": [
+            "House Wiring",
+            "Fault Finding",
+            "Solar Installation",
+            "Generator Installation",
+            "DB Board Upgrades",
+            "Lighting Installation"
+        ],
+
+        "IT Services": [
+            "Computer Repair",
+            "Network Installation",
+            "Web Development",
+            "Cyber Security",
+            "Cloud Services",
+            "Software Development"
+        ],
+        "Retail": [
+            "Clothing Store",
+            "Supermarket",
+            "Furniture Store"
+        ],
+
+        "Food": [
+            "Restaurant",
+            "Takeaways",
+            "Catering"
+        ],
+
+        "Salon": [
+            "Hair Salon",
+            "Nail Salon",
+            "Beauty Salon"
+        ]
+    };
+
+    const categorySelect = document.getElementById("category");
+    const subcategorySelect = document.getElementById("subcategory");
+
+    categorySelect.addEventListener("change", function () {
+
+        const selectedCategory = this.value;
+
+        subcategorySelect.innerHTML =
+            '<option value="" selected disabled>Select Sub Category</option>';
+
+        if (subcategories[selectedCategory]) {
+
+            subcategories[selectedCategory].forEach(subcategory => {
+
+                const option = document.createElement("option");
+                option.value = subcategory;
+                option.textContent = subcategory;
+
+                subcategorySelect.appendChild(option);
+            });
+        }
+    });
+
+
     // STEP 1 -> STEP 2
     document.getElementById("nextBtn").addEventListener("click", () => {
 
         const businessName = document.querySelector('[name="business_name"]').value;
         const category = document.querySelector('[name="category"]').value;
-        const category = document.querySelector('[name="subcategory"]').value;
+        const subcategory = document.querySelector('[name="subcategory"]').value;
         const description = document.querySelector('[name="description"]').value;
 
-        const subcategories = {
-            "Plumbing Services": [
-                "Emergency Plumbing",
-                "Residential Plumbing",
-                "Commercial Plumbing",
-                "Leak Detection & Repair",
-                "Blocked Drains",
-                "Drain Cleaning",
-                "Burst Pipe Repairs",
-                "Geyser Installation",
-                "Geyser Repairs",
-                "Toilet Repairs",
-                "Bathroom Renovations",
-                "Kitchen Plumbing"
-            ],
-
-            "Electrical": [
-                "House Wiring",
-                "Fault Finding",
-                "Solar Installation",
-                "Generator Installation",
-                "DB Board Upgrades",
-                "Lighting Installation"
-            ],
-
-            "IT Services": [
-                "Computer Repair",
-                "Network Installation",
-                "Web Development",
-                "Cyber Security",
-                "Cloud Services",
-                "Software Development"
-            ]
-        };
-
-        const categorySelect = document.getElementById("category");
-        const subcategorySelect = document.getElementById("subcategory");
-
-        categorySelect.addEventListener("change", function () {
-
-            const selectedCategory = this.value;
-
-            subcategorySelect.innerHTML =
-                '<option value="" selected disabled>Select Sub Category</option>';
-
-            if (subcategories[selectedCategory]) {
-
-                subcategories[selectedCategory].forEach(subcategory => {
-
-                    const option = document.createElement("option");
-                    option.value = subcategory;
-                    option.textContent = subcategory;
-
-                    subcategorySelect.appendChild(option);
-                });
-            }
-        });
-
+        
         if (!businessName.trim()) {
             alert("Business Name is required");
             return;
@@ -194,6 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Business:</strong> ${document.querySelector('[name="business_name"]').value}</p>
 
             <p><strong>Category:</strong> ${document.querySelector('[name="category"]').value}</p>
+
+            <p><strong>Sub Category:</strong> ${document.querySelector('[name="subcategory"]').value}</p>
 
             <p><strong>Description:</strong> ${document.querySelector('[name="description"]').value}</p>
 
