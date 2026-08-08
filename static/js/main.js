@@ -162,17 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     categorySelect.addEventListener("change", function () {
-    const customField = document.getElementById("customSubcategory");
+        const customField = document.getElementById("customSubcategory");
 
-        if (this.value === "Other") {
-            customField.style.display = "block";
-        } else {
-            customField.style.display = "none";
-        }
-    });
+            if (this.value === "Other") {
+                customField.style.display = "block";
+            } else {
+                customField.style.display = "none";
+            }
+        });
 
-    const categorySelect = document.getElementById("category");
-    const subcategorySelect = document.getElementById("subcategory");
+        const categorySelect = document.getElementById("category");
+        const subcategorySelect = document.getElementById("subcategory");
 
     categorySelect.addEventListener("change", function () {
 
