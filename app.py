@@ -26,10 +26,15 @@ def health():
 def submit_business():
     data = request.form
 
+    subcategory = data.get("subcategory")
+    if subcategory == "Please Specify":
+        subcategory = data.get("custom_subcategory")
+
     business_data = {
         "business_name": data.get("business_name"),
         "category": data.get("category"),
         "subcategory": data.get("subcategory"),
+        "custom_subcategory": data.get("custom_subcategory"),
         "description": data.get("description"),
         "years": data.get("years"),
         "employees": data.get("employees"),
@@ -38,6 +43,7 @@ def submit_business():
         "email": data.get("email"),
         "address": data.get("address")
     }
+
 
     uploaded_files = []
 
