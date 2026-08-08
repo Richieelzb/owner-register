@@ -13,6 +13,11 @@ body{
     color: red;
     font-weight: bold;
 }
+.mandatory-note {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
 
 .form-group label {
     display: block;

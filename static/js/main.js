@@ -27,7 +27,6 @@ document
         alert("Failed to submit business.");
     }
 
-    console.log(data);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const businessName = document.querySelector('[name="business_name"]').value;
         const category = document.querySelector('[name="category"]').value;
+        const category = document.querySelector('[name="subcategory"]').value;
         const description = document.querySelector('[name="description"]').value;
 
         if (!businessName.trim()) {
@@ -54,6 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!category || category === "Select Category") {
             alert("Please select a category");
+            return;
+        }
+
+        if (!subcategory || subcategory === "Select Sub Category") {
+            alert("Please select a sub category");
             return;
         }
 
